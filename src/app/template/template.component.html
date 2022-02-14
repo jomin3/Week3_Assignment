@@ -1,4 +1,4 @@
-<!-- <div [ngClass]="'background'">
+<div [ngClass]="'background'">
   <div [ngClass]="'signup'">
     <div [ngClass]="'colOne'">
       <div [ngClass]="'para1'">
@@ -17,9 +17,9 @@
       </div>
       <form
         action=""
-        #signup="ngForm"
+        [formGroup]="formsign"
         [ngClass]="'inputForm'"
-        (ngSubmit)="login(signup.value)"
+        (ngSubmit)="login(formsign.value)"
       >
         <div>
           <input
@@ -28,9 +28,7 @@
             id="fname"
             [ngClass]="fname.value < 1 && fname.touched ? 'error' : ''"
             name="fname"
-            ngModel
-            #fname="ngModel"
-            minlength="1"
+            formControlName="fname"
           />
           <div *ngIf="fname.touched && fname.value < 1">
             First name cannot be empty
@@ -42,10 +40,8 @@
             placeholder="Last Name"
             id="lname"
             name="lname"
+            formControlName="lname"
             [ngClass]="lname.value < 1 && lname.touched ? 'error' : ''"
-            ngModel
-            #lname="ngModel"
-            minlength="1"
           />
           <div *ngIf="lname.touched && lname.value < 1">
             Last name cannot be empty
@@ -57,10 +53,8 @@
             placeholder="Email Address"
             ngModel
             name="emailid"
+            formControlName="mailid"
             [ngClass]="mailid.invalid && mailid.touched ? 'error' : ''"
-            #mailid="ngModel"
-            email
-            required
           />
           <div *ngIf="mailid.touched && mailid.invalid">
             Looks like this is not an email
@@ -73,9 +67,8 @@
             required
             id="pass"
             name="pass"
+            formControlName="pass"
             [ngClass]="pass.value < 1 && pass.touched ? 'error' : ''"
-            ngModel
-            #pass="ngModel"
           />
           <div *ngIf="pass.touched && pass.value < 1">
             Password cannot be empty
@@ -86,7 +79,7 @@
             type="submit"
             value=""
             [ngClass]="'btn'"
-            [disabled]="signup.invalid"
+            [disabled]="formsign.invalid"
           >
             CLAIM YOUR FREE TRIAL
           </button>
@@ -99,6 +92,4 @@
       </form>
     </div>
   </div>
-</div> -->
-
-<app-template></app-template>
+</div>

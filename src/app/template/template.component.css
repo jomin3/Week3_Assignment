@@ -8,7 +8,7 @@
   height: 100vh;
   width: 100vw;
   background-color: hsl(0, 100%, 74%);
-  background-image: url(..\assets\bg-intro-desktop.png);
+  background-image: url(..\..\assets\bg-intro-desktop.png);
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
@@ -73,8 +73,6 @@
 .inputForm input::placeholder {
   font-family: "Poppins";
   color: black;
-
-  /* color: hsl(246, 25%, 77%); */
 }
 .inputForm input {
   color: hsl(249, 10%, 26%);
@@ -101,7 +99,32 @@
   color: red;
 }
 .error {
-  background: url(..\assets\icon-error.svg) no-repeat scroll;
+  background: url(..\..\assets\icon-error.svg) no-repeat scroll;
   background-position: 99%;
   border: 1px solid red;
+}
+
+@media screen and (max-device-width: 500px) {
+  .background {
+    height: 180vh;
+    width: 100vw;
+  }
+  .signup {
+    height: 165vh;
+    grid-template-rows: 35% 65%;
+    grid-template-columns: 1fr;
+  }
+  .colOne {
+    justify-content: space-around;
+  }
+  .inputForm {
+    align-content: space-around;
+  }
+  .para1 {
+    font-size: 2em;
+  }
+  .para2 {
+    font-size: 0.9em;
+    text-align: center;
+  }
 }
